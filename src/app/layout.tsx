@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Header from "@/components/Header";
+import { AnimatePresence, motion } from 'framer-motion'
+import Transition from "@/components/Transition";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="pt-BR">
+          <body className={`${inter.className} max-w-6xl mx-auto flex flex-col items-center justify-center`}>
+            <Header />
+            {children}
+            <Navbar />
+          </body>
     </html>
   );
 }
