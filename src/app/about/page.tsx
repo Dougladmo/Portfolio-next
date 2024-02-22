@@ -1,10 +1,11 @@
-import React from 'react'
+import Transition from "@/components/Transition"
 
 const Sobre = () => {
   return (
-    <main className="text-white min-h-screen">
-      <h1>sobre</h1>
-    </main>
+    <div className="text-white min-h-screen">
+      <Transition />
+        <h1>sobre</h1>
+    </div>
   )
 }
 

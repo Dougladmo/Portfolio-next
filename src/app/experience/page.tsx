@@ -1,11 +1,11 @@
-import React from 'react'
-import Navbar from '@/components/Navbar'
+import Transition from "@/components/Transition"
 
 const Experiencia = () => {
   return (
-    <main className="text-white min-h-screen">
-      <h1>Experiencia</h1>
-    </main>
+    <div className="text-white min-h-screen">
+      <Transition />
+        <h1>Experiencia</h1>
+    </div>
   )
 }
 
