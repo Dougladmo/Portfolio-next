@@ -7,7 +7,7 @@
   }
   
   .light {
-    --bg-url: url(../../public/bg-desktop-light.jpg);
+    --bg-url: url(../../public/bg-desktop.jpg);
   }
 
 body {
