@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Outfit, Oswald } from "next/font/google"; // Changed Inter to Outfit and added Oswald
+import { Outfit, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
 import ParticlesBackground from "@/components/ParticlesBackground";
+import { TransitionProvider } from "@/components/TransitionContext";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -32,9 +33,11 @@ export default function RootLayout({
       >
         <ParticlesBackground />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none" />
-        <Header />
-        {children}
-        <Navbar />
+        <TransitionProvider>
+          <Header />
+          {children}
+          <Navbar />
+        </TransitionProvider>
       </body>
     </html>
   );

@@ -12,10 +12,10 @@ const Header = () => {
         </h1>
         <div>
           <ul className='flex gap-5'>
-            <li><a className='text-2xl hover:text-blue-400 transition-colors' href="#"><FaLinkedin/></a></li>
-            <li><a className='text-2xl hover:text-purple-400 transition-colors' href="#"><FaGithub/></a></li>
-            <li><a className='text-2xl hover:text-green-400 transition-colors' href="#"><FaWhatsapp/></a></li>
-            <li><a className='text-2xl hover:text-pink-400 transition-colors' href="#"><IoMdMail/></a></li>
+            <li><a className='text-2xl hover:text-blue-400 transition-colors' target='_blank' href="https://www.linkedin.com/in/douglas-desenvolvedor-software"><FaLinkedin/></a></li>
+            <li><a className='text-2xl hover:text-purple-400 transition-colors' target='_blank' href="https://github.com/dougladmo"><FaGithub/></a></li>
+            <li><a className='text-2xl hover:text-green-400 transition-colors' target='_blank' href="https://wa.me/5591981941219"><FaWhatsapp/></a></li>
+            <li><a className='text-2xl hover:text-pink-400 transition-colors' target='_blank' href="mailto:douglasdmoliver@gmail.com"><IoMdMail/></a></li>
           </ul>
         </div>
     </div>

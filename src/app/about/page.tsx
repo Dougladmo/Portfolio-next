@@ -1,7 +1,6 @@
 "use client";
 
 import { Oswald } from "next/font/google";
-import Transition from "@/components/Transition";
 import { FaReact, FaNodeJs, FaDocker, FaAws, FaGitAlt } from "react-icons/fa";
 import { SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiFirebase, SiPostgresql } from "react-icons/si";
 import ColourfulText from "@/components/ui/colourful-text";
@@ -90,7 +89,6 @@ export default function About() {
         </div>
       </main>
 
-      <Transition />
     </>
   );
 }

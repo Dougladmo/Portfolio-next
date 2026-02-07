@@ -1,5 +1,4 @@
 "use client";
-import Transition from "@/components/Transition"
 import { HeroParallaxDemo } from "@/components/HeroParallaxDemo"
 import { CometCard } from "@/components/ui/comet-card"
 import { PointerHighlight } from "@/components/ui/pointer-highlight"
@@ -67,7 +66,6 @@ const projectStacks = [
 const Projetos = () => {
   return (
     <div className="text-white">
-      <Transition />
       <div className="opacity-0 animate-[fadeIn_0.5s_ease-in-out_1.8s_forwards]">
         <HeroParallaxDemo />
       </div>
@@ -133,7 +131,7 @@ const Projetos = () => {
           </div>
 
           {/* Stats Section */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="mt-20 flex justify-center gap-20">
             <div className="text-center">
               <div className={`${oswald.className} text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-2`}>
                 15+
@@ -142,19 +140,14 @@ const Projetos = () => {
             </div>
             <div className="text-center">
               <div className={`${oswald.className} text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 mb-2`}>
-                20+
+                10+
               </div>
-              <p className="text-gray-400 text-sm md:text-base">Tecnologias</p>
+              <p className="text-gray-400 text-sm md:text-base">Tecnologias e Ferramentas</p>
             </div>
-            <div className="text-center">
-              <div className={`${oswald.className} text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-2`}>
-                100%
-              </div>
-              <p className="text-gray-400 text-sm md:text-base">Satisfação</p>
-            </div>
+            
             <div className="text-center">
               <div className={`${oswald.className} text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500 mb-2`}>
-                4+
+                3+
               </div>
               <p className="text-gray-400 text-sm md:text-base">Anos de Experiência</p>
             </div>

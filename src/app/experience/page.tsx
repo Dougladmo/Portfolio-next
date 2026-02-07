@@ -1,6 +1,5 @@
 "use client";
 import { Oswald } from "next/font/google";
-import Transition from "@/components/Transition";
 import { CometCard } from "@/components/ui/comet-card";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
 
@@ -9,58 +8,59 @@ const oswald = Oswald({ subsets: ["latin"] });
 export default function Experience() {
   const experiences = [
     {
-      role: "Frontend Developer",
-      company: "PepperLaw",
-      period: "Ago 2025 - Presente (7 meses)",
-      location: "São Paulo, Brasil",
-      description: "Entrei em uma startup com codebase desorganizada construída com React e Supabase, onde funcionalidades-chave estavam quebradas e a implementação da UI não correspondia aos designs do Figma. Reestruturei completamente a arquitetura front-end para criar um sistema profissional e manutenível que melhorou a experiência do usuário, usabilidade e velocidade de desenvolvimento.",
-      highlights: [
-        "Implementei um editor Markdown com sistema de comentários e funcionalidade de exportação de arquivos",
-        "Corrigi bugs críticos em toda a plataforma garantindo integração perfeita entre componentes front-end e back-end",
-        "Ajudei a garantir o primeiro cliente pagante da startup ao entregar uma plataforma estável e pronta para produção"
-      ],
-      skills: ["React", "Supabase", "Markdown", "WOPI", "Bug Fixing"]
-    },
-    {
-      role: "Co-Founder & Fullstack Developer",
-      company: "Nobuggy",
-      period: "Jan 2025 - Presente (1 ano 2 meses)",
-      location: "São Paulo, Brasil",
-      description: "Co-fundei a Nobuggy em 2025 como uma empresa de soluções digitais, liderando o ciclo completo de desenvolvimento de software desde a prospecção de clientes e planejamento até a entrega de produtos digitais escaláveis e de alto impacto para clientes B2B e B2C.",
-      highlights: [
-        "Desenvolvo aplicações web fullstack usando ecossistema React, Next.js, Node.js, AWS, Supabase e Google API",
-        "Crio agentes de IA com n8n para automação de vendas e atendimento via WhatsApp e LinkedIn - construí workflows inteligentes que ajudaram clientes a economizar R$20.000-30.000 em custos operacionais e um agente alcançou taxa de conversão média de 20% de 500 leads",
-        "Planejamento e implementação de arquiteturas serverless escaláveis usando AWS Lambda, S3 e Firebase",
-        "Gerei mais de R$30.000+ em receita em seis meses (média de R$7K/mês), entregando soluções que criaram potencial de receita de seis dígitos para clientes"
-      ],
-      skills: ["Next.js", "React", "AWS Lambda", "n8n", "AI Agents", "Supabase", "Google API"]
-    },
-    {
-      role: "Fullstack Developer",
-      company: "Workana",
-      period: "Nov 2020 - Set 2025 (4 anos 11 meses)",
+      role: "Desenvolvedor Frontend",
+      company: "Pepperlaw AI",
+      period: "Ago 2025 - Atual",
       location: "Remoto",
-      description: "Alcancei ranking Hero Tier como #245 globalmente de 11,76 milhões de freelancers e TOP #45 na categoria IT & Programação mundialmente (#20 no Brasil), demonstrando entrega consistente de alta qualidade e satisfação do cliente.",
+      description: "Entrei em um projeto com o front-end gerado com IA da Lovable, completamente desorganizado e cheio de falhas. Precisava reestruturar a UI para alinhar ao design do time de Design/UX e tornar o produto viável para clientes corporativos.",
       highlights: [
-        "Desenvolvi aplicações web de alta performance usando React, Next.js e TypeScript com foco em UX, SEO e performance (alcançando pontuações Lighthouse de 95+)",
-        "Integrei MongoDB, Supabase e APIs RESTful para gerenciamento seguro de dados",
-        "Construí agentes de IA e workflows de automação usando n8n que alcançaram mais de 30% de taxa de conversão",
-        "Ajudei clientes a economizar mais de R$30.000 em custos operacionais mantendo média de 5 estrelas em todos os projetos entregues"
+        "Liderei a reestruturação da UI utilizando React pixel-perfect com o design da equipe de Design/UX, criando componentes mais fáceis de manter, com melhora na performance, experiência do usuário, navegação fluida e responsiva.",
+        "Desenvolvi um editor similar ao Word com suporte a Markdown, comentários e exportação em múltiplos formatos, além de integrar posteriormente o sistema ao WOPI (Web Application Open Platform Interface).",
+        "Essa reformulação, feita em conjunto com a equipe de desenvolvimento, elevou a qualidade do produto, reduziu bugs críticos e contribuiu diretamente para a conquista do primeiro cliente corporativo da startup."
       ],
-      skills: ["React", "Next.js", "TypeScript", "MongoDB", "Supabase", "SEO", "n8n"]
+      skills: ["React", "Markdown", "WOPI", "UI/UX", "Performance"]
     },
     {
-      role: "Full-stack Mobile Developer ",
-      company: "C2A Soluções Em Tecnologia",
-      period: "Out 2024 - Abr 2025 (7 meses)",
+      role: "Desenvolvedor Full Stack Pleno",
+      company: "C2A Soluções em Tecnologia",
+      period: "Out 2024 - Mar 2025",
       location: "Belém, Pará, Brasil",
-      description: "Liderei o desenvolvimento end-to-end como único desenvolvedor de um aplicativo mobile de engajamento cívico para Belém do Pará, reunindo requisitos diretamente com o dono da empresa e construindo uma plataforma para cidadãos relatarem problemas urbanos como buracos e problemas de gestão de resíduos.",
+      description: "Fui responsável por todo o ciclo de desenvolvimento de um aplicativo de reports urbanos em Belém do Pará, desde o levantamento de requisitos até a publicação nas lojas Android e iOS.",
       highlights: [
-        "Construí aplicativo mobile multiplataforma usando React Native e Expo",
-        "Integrei Google Maps API e Geolocalização para relato preciso de problemas baseado em localização e mapeamento em tempo real",
-        "Migrei infraestrutura backend para arquitetura serverless AWS Lambda com DynamoDB, reduzindo custos operacionais em aproximadamente R$5.000/mês enquanto garantia escalabilidade para implantação em toda a cidade"
+        "Desenvolvi o aplicativo completo utilizando React Native e Expo, cobrindo desde o levantamento de requisitos até a publicação nas lojas.",
+        "Integrei as APIs do Google Maps e Google Places para permitir geolocalização e renderização em tempo real dos pontos reportados.",
+        "Estruturei o backend do zero em arquitetura serverless usando AWS Lambda, API Gateway, S3, DynamoDB e SES, garantindo escalabilidade e baixo custo de operação.",
+        "Entreguei um sistema completo, funcional e estável, que atendeu integralmente às necessidades do cliente e passou a operar em produção sem incidentes, sendo colocado na Play Store."
       ],
-      skills: ["React Native", "Expo", "AWS Lambda", "DynamoDB", "Google Maps API", "Geolocation"]
+      skills: ["React Native", "Expo", "AWS Lambda", "DynamoDB", "Google Maps API", "API Gateway", "S3", "SES"]
+    },
+    {
+      role: "Desenvolvedor Back End Pleno",
+      company: "Avatech",
+      period: "Abr 2024 - Mar 2025",
+      location: "Remoto",
+      description: "Fui contratado como freelancer para desenvolver um sistema serverless completo do zero, utilizando Firebase Cloud Functions, Firestore e Node.js.",
+      highlights: [
+        "Criei um sistema de quizzes com IA baseado em LLMs, permitindo a geração automática de provas personalizadas e correção inteligente conforme as regras de negócio.",
+        "Implementei um sistema de agendamento automático que ajusta a dificuldade das provas conforme o desempenho do aluno.",
+        "Integrei a Stripe para pagamentos por assinatura e links dinâmicos, entregando um sistema sólido e seguro, com checkout otimizado e alta taxa de retenção."
+      ],
+      skills: ["Firebase", "Cloud Functions", "Firestore", "Node.js", "LLMs", "Stripe", "Serverless"]
+    },
+    {
+      role: "Desenvolvedor Full Stack",
+      company: "CASTA Tecnologia",
+      period: "Ago 2022 - Jul 2024",
+      location: "Belém, Pará, Brasil",
+      description: "Atuei no desenvolvimento e manutenção de projetos web profissionais, incluindo reconstruções completas de sites, landing pages e sistemas com foco em performance, SEO e experiência do usuário.",
+      highlights: [
+        "Implementei integrações com APIs REST e otimizações de SEO e velocidade (Google PageSpeed 95+), garantindo alto desempenho e usabilidade.",
+        "Reconstruí completamente um site de advocacia antes feito em WordPress, migrando para Next.js com código limpo e escalável.",
+        "Fui responsável pelo redesign e desenvolvimento da página inicial da empresa com React e Tailwind CSS, criando uma interface moderna e estratégica.",
+        "Desenvolvi landing pages e sistemas web aplicando boas práticas de SEO, versionamento com Git/GitHub e metodologias ágeis (Scrum e Kanban).",
+        "Criei um site completo para um escritório de advocacia com interface interativa e animações, destacando a experiência do usuário e o valor da marca."
+      ],
+      skills: ["React", "Next.js", "Tailwind CSS", "SEO", "APIs REST", "Git", "Scrum", "Kanban"]
     },
   ];
 
@@ -119,7 +119,7 @@ export default function Experience() {
                       <ul className="space-y-2 mb-4">
                         {exp.highlights.map((highlight, highlightIndex) => (
                           <li key={highlightIndex} className="flex items-start gap-3 text-gray-300 text-sm">
-                            <span className="text-blue-400 mt-1 flex-shrink-0 text-lg">▸</span>
+                            <span className="text-blue-400 text-lg">▸</span>
                             <span className="leading-relaxed">{highlight}</span>
                           </li>
                         ))}
@@ -163,146 +163,149 @@ export default function Experience() {
             </div>
           </div>
 
-          {/* Professional Certifications */}
-          <div className="mb-20">
-            <h2 className={`${oswald.className} text-3xl md:text-5xl font-bold text-white mb-12 flex items-center gap-3`}>
-              <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
-              Certificações Profissionais
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <CometCard rotateDepth={12} translateDepth={12}>
-                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
-                  <div>
-                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
-                    <p className="text-white font-semibold text-lg mb-2">Professional Day 2025</p>
-                    <p className="text-gray-400 text-base mb-1">Dell Technologies</p>
-                    <p className="text-gray-500 text-sm">Out 2025</p>
-                  </div>
-                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
-                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
-                </div>
-              </CometCard>
-
-              <CometCard rotateDepth={12} translateDepth={12}>
-                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
-                  <div>
-                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
-                    <p className="text-white font-semibold text-lg mb-2">Scrum Utilitário</p>
-                    <p className="text-gray-400 text-base mb-1">MindMaster Treinamentos</p>
-                    <p className="text-gray-500 text-sm">Out 2024</p>
-                  </div>
-                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
-                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
-                </div>
-              </CometCard>
-
-              <CometCard rotateDepth={12} translateDepth={12}>
-                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
-                  <div>
-                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
-                    <p className="text-white font-semibold text-lg mb-2">Front-end do Zero</p>
-                    <p className="text-gray-400 text-base mb-1">Rocketseat</p>
-                    <p className="text-gray-500 text-sm">Out 2024</p>
-                  </div>
-                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
-                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
-                </div>
-              </CometCard>
-
-              <CometCard rotateDepth={12} translateDepth={12}>
-                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
-                  <div>
-                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
-                    <p className="text-white font-semibold text-lg mb-2">Introdução ao Front-End Development</p>
-                    <p className="text-gray-400 text-base mb-1">Meta via Coursera</p>
-                    <p className="text-gray-500 text-sm">Mai 2024</p>
-                  </div>
-                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
-                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
-                </div>
-              </CometCard>
-
-              <CometCard rotateDepth={12} translateDepth={12}>
-                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
-                  <div>
-                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
-                    <p className="text-white font-semibold text-lg mb-2">Desenvolvimento Web: HTML, CSS, JS, React, TS</p>
-                    <p className="text-gray-400 text-base mb-1">Udemy</p>
-                    <p className="text-gray-500 text-sm">Abr 2024</p>
-                  </div>
-                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
-                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
-                </div>
-              </CometCard>
-
-              <CometCard rotateDepth={12} translateDepth={12}>
-                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
-                  <div>
-                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
-                    <p className="text-white font-semibold text-lg mb-2">Scrum Fundamentals Certified (SFC)</p>
-                    <p className="text-gray-400 text-base mb-1">SCRUMstudy - Accreditation Body</p>
-                    <p className="text-gray-500 text-sm">Abr 2024</p>
-                  </div>
-                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
-                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
-                </div>
-              </CometCard>
-
-              <CometCard rotateDepth={12} translateDepth={12}>
-                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
-                  <div>
-                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
-                    <p className="text-white font-semibold text-lg mb-2">Formação Java</p>
-                    <p className="text-gray-400 text-base mb-1">Rocketseat</p>
-                    <p className="text-gray-500 text-sm">Mar 2024</p>
-                  </div>
-                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
-                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
-                </div>
-              </CometCard>
-
-              <CometCard rotateDepth={12} translateDepth={12}>
-                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
-                  <div>
-                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
-                    <p className="text-white font-semibold text-lg mb-2">Trabalhando em um Mundo Digital</p>
-                    <p className="text-gray-400 text-base mb-1">IBM</p>
-                    <p className="text-gray-500 text-sm">Mar 2024</p>
-                  </div>
-                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
-                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
-                </div>
-              </CometCard>
-
-              <CometCard rotateDepth={12} translateDepth={12}>
-                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
-                  <div>
-                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
-                    <p className="text-white font-semibold text-lg mb-2">IA-900 (Azure AI Fundamentals)</p>
-                    <p className="text-gray-400 text-base mb-1">Microsoft</p>
-                    <p className="text-gray-500 text-sm">Mar 2024</p>
-                  </div>
-                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
-                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
-                </div>
-              </CometCard>
-            </div>
-          </div>
-
-          {/* Cursos de Desenvolvimento */}
+          {/* Cursos e Certificações */}
           <div className="pb-24">
             <h2 className={`${oswald.className} text-3xl md:text-5xl font-bold text-white mb-12 flex items-center gap-3`}>
               <div className="h-1 w-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />
-              Cursos de Desenvolvimento
+              Cursos e Certificações
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <CometCard rotateDepth={12} translateDepth={12}>
                 <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
                   <div>
                     <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
-                    <p className="text-white font-semibold text-lg mb-2">Git com Blue</p>
-                    <p className="text-gray-400 text-base mb-1">Blue EdTech</p>
-                    <p className="text-gray-500 text-sm">Ago 2023</p>
+                    <p className="text-white font-semibold text-lg mb-2">Certificado de Participação - Python Norte 2025</p>
+                    <p className="text-gray-400 text-base mb-1">Even3</p>
+                    <p className="text-gray-500 text-sm">Out 2025</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
+
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Scrum Utilitário</p>
+                    <p className="text-gray-400 text-base mb-1">MindMaster Treinamentos</p>
+                    <p className="text-gray-500 text-sm">Out 2024</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
+
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Front-end do Zero</p>
+                    <p className="text-gray-400 text-base mb-1">Rocketseat</p>
+                    <p className="text-gray-500 text-sm">Out 2024</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
+
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Semana Ubíqua</p>
+                    <p className="text-gray-400 text-base mb-1">UNAMA</p>
+                    <p className="text-gray-500 text-sm">Jun 2024</p>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 mt-3">
+                    <span className="text-xs text-gray-400 bg-white/5 px-2 py-0.5 rounded">React</span>
+                    <span className="text-xs text-gray-400 bg-white/5 px-2 py-0.5 rounded">API REST</span>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
+
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Introdução ao Front-End Development</p>
+                    <p className="text-gray-400 text-base mb-1">Meta via Coursera</p>
+                    <p className="text-gray-500 text-sm">Mai 2024</p>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 mt-3">
+                    <span className="text-xs text-gray-400 bg-white/5 px-2 py-0.5 rounded">CSS</span>
+                    <span className="text-xs text-gray-400 bg-white/5 px-2 py-0.5 rounded">Bootstrap</span>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
+
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Desenvolvimento Web: HTML, CSS, JS, React, TS</p>
+                    <p className="text-gray-400 text-base mb-1">Udemy</p>
+                    <p className="text-gray-500 text-sm">Abr 2024</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
+
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Scrum Fundamentals Certified (SFC)</p>
+                    <p className="text-gray-400 text-base mb-1">SCRUMstudy - Accreditation Body</p>
+                    <p className="text-gray-500 text-sm">Abr 2024</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
+
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Formação Java</p>
+                    <p className="text-gray-400 text-base mb-1">Rocketseat</p>
+                    <p className="text-gray-500 text-sm">Mar 2024</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
+
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Trabalhando em um Mundo Digital</p>
+                    <p className="text-gray-400 text-base mb-1">IBM</p>
+                    <p className="text-gray-500 text-sm">Mar 2024</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
+
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Bootcamp &ldquo;Semana do Herói&rdquo;</p>
+                    <p className="text-gray-400 text-base mb-1">Hero Code</p>
+                    <p className="text-gray-500 text-sm">Fev 2024</p>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 mt-3">
+                    <span className="text-xs text-gray-400 bg-white/5 px-2 py-0.5 rounded">Next.js</span>
+                    <span className="text-xs text-gray-400 bg-white/5 px-2 py-0.5 rounded">WebRTC</span>
                   </div>
                   <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
                   <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
@@ -314,7 +317,7 @@ export default function Experience() {
                   <div>
                     <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
                     <p className="text-white font-semibold text-lg mb-2">Páginas Web com HTML5</p>
-                    <p className="text-gray-400 text-base mb-1">Fundação Bradesco</p>
+                    <p className="text-gray-400 text-base mb-1">DIO</p>
                     <p className="text-gray-500 text-sm">Ago 2023</p>
                   </div>
                   <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
@@ -327,7 +330,7 @@ export default function Experience() {
                   <div>
                     <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
                     <p className="text-white font-semibold text-lg mb-2">Técnicas Lógicas para JavaScript</p>
-                    <p className="text-gray-400 text-base mb-1">FIAP</p>
+                    <p className="text-gray-400 text-base mb-1">DIO</p>
                     <p className="text-gray-500 text-sm">Ago 2023</p>
                   </div>
                   <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
@@ -340,7 +343,7 @@ export default function Experience() {
                   <div>
                     <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
                     <p className="text-white font-semibold text-lg mb-2">Estilizando Páginas com CSS</p>
-                    <p className="text-gray-400 text-base mb-1">Fundação Bradesco</p>
+                    <p className="text-gray-400 text-base mb-1">DIO</p>
                     <p className="text-gray-500 text-sm">Ago 2023</p>
                   </div>
                   <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
@@ -353,7 +356,7 @@ export default function Experience() {
                   <div>
                     <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
                     <p className="text-white font-semibold text-lg mb-2">Versionamento de Código com Git</p>
-                    <p className="text-gray-400 text-base mb-1">FIAP</p>
+                    <p className="text-gray-400 text-base mb-1">DIO</p>
                     <p className="text-gray-500 text-sm">Ago 2023</p>
                   </div>
                   <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
@@ -392,7 +395,6 @@ export default function Experience() {
         </div>
       </main>
 
-      <Transition />
     </>
   );
 }

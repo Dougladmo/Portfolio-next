@@ -1,5 +1,4 @@
 import { PixelatedCanvas } from "@/components/ui/pixelated-canvas";
-import Transition from "@/components/Transition";
 import { Cover } from "@/components/ui/cover";
 
 export default function Home() {
@@ -67,7 +66,7 @@ export default function Home() {
                 </a>
 
                 <a
-                  href="https://wa.me/5511999999999"
+                  href="https://wa.me/5591981941219"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-5 py-2 md:px-8 md:py-3 rounded-full border border-white/20 text-white font-medium hover:bg-white/10 transition-all hover:scale-105 backdrop-blur-sm text-xs md:text-base"
@@ -80,7 +79,6 @@ export default function Home() {
         </div>
       </main>
 
-      <Transition />
     </>
   );
 }
