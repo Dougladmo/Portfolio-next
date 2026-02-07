@@ -5,7 +5,11 @@ import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
 
 const outfit = Outfit({ subsets: ["latin"] }); // Primary font
-const oswald = Oswald({ subsets: ["latin"], weight: ["400", "500", "700"], variable: "--font-oswald" }); // Heading font
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-oswald",
+}); // Heading font
 
 export const metadata: Metadata = {
   title: "Douglas Oliveira | Full Stack Developer", // Updated title
@@ -17,14 +21,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="pt-BR">
-          <body className={`${outfit.className} ${oswald.variable} flex flex-col min-h-screen bg-[#0a0a0a]`}>
-              <Header />
-              {children}
-              <Navbar />
-          </body>
+      <body
+        className={`${outfit.className} ${oswald.variable} h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]`}
+      >
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none" />
+        <Header />
+        {children}
+        <Navbar />
+      </body>
     </html>
   );
 }

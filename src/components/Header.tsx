@@ -4,7 +4,7 @@ import { IoMdMail } from "react-icons/io";
 
 const Header = () => {
   return (
-    <div className='w-full text-white p-6 md:p-8 flex items-center justify-between z-50 relative bg-[#0a0a0a]'>
+    <div className='w-full text-white max-w-[1350px] mx-auto p-6 md:p-8 flex items-center justify-between md:justify-between md:items-center relative'>
         <h1 className='flex flex-col text-3xl'>Douglas <span className=''>Oliveira</span></h1>
         <div>
           <ul className='flex gap-5'>

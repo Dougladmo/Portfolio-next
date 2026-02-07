@@ -1,19 +1,50 @@
 import { PixelatedCanvas } from "@/components/ui/pixelated-canvas";
 import Transition from "@/components/Transition";
+import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
     <>
-      <Transition />
-      <main className="flex-1 w-full flex flex-col items-center justify-center overflow-hidden relative bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] pb-32 md:pb-20">
-
+      <main className="w-full flex overflow-hidden relative">
         {/* Background ambient glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none" />
-
-        <div className="z-10 flex flex-col md:flex-row items-center text-center md:text-left gap-3 md:gap-12 relative max-w-7xl mx-auto px-4 w-full h-full justify-center py-8">
+        <div className="z-10 flex flex-col md:flex-row-reverse md:justify-between md:items-center items-center justify-start text-center md:text-left gap-3 md:gap-12 relative max-w-7xl mx-auto px-4 w-full h-full py-0 md:py-8">
+          {/* Right Content - Visual Interaction */}
+          <div className="flex justify-center py-1 scale-[0.7] md:scale-100">
+            <div className="relative p-2 border border-white/10 bg-white/5 rounded-lg backdrop-blur-sm shadow-2xl">
+              <div>
+                <PixelatedCanvas
+                  src="/insta_foto.jpg"
+                  width={400}
+                  height={400}
+                  cellSize={3}
+                  dotScale={0.9}
+                  shape="square"
+                  backgroundColor="#000000"
+                  dropoutStrength={0.4}
+                  interactive
+                  distortionStrength={3}
+                  distortionRadius={80}
+                  distortionMode="swirl"
+                  followSpeed={0.2}
+                  jitterStrength={4}
+                  jitterSpeed={4}
+                  sampleAverage
+                  tintColor="#FFFFFF"
+                  tintStrength={0.1}
+                  className="border border-neutral-800"
+                />
+              </div>
+            </div>
+            {/* Decorative corners */}
+            <div className="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-blue-500/50" />
+            <div className="absolute -top-1 -right-1 w-3 h-3 border-t-2 border-r-2 border-purple-500/50" />
+            <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b-2 border-l-2 border-blue-500/50" />
+            <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-purple-500/50" />
+          </div>
 
           {/* Left Content - Text and CTA */}
-          <div className="flex flex-col gap-3 md:gap-6 flex-1 order-2 md:order-1">
+          <div className="flex flex-col gap-3 md:gap-6">
             {/* Top Text Group */}
             <div className="space-y-1 md:space-y-2 animate-fade-in-up">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-oswald tracking-tighter text-white drop-shadow-2xl">
@@ -50,43 +81,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* Right Content - Visual Interaction */}
-          <div className="relative flex justify-center py-1 scale-[0.7] md:scale-100 origin-center order-1 md:order-2">
-            <div className="relative p-2 border border-white/10 bg-white/5 rounded-lg backdrop-blur-sm shadow-2xl">
-              <div className="relative w-[240px] h-[240px] md:w-[380px] md:h-[380px] overflow-hidden rounded-md bg-black/50">
-                <PixelatedCanvas
-                  src="/insta_foto.jpg"
-                  width={400}
-                  height={400}
-                  cellSize={3}
-                  dotScale={0.9}
-                  shape="square"
-                  backgroundColor="#000000"
-                  dropoutStrength={0.4}
-                  interactive
-                  distortionStrength={3}
-                  distortionRadius={80}
-                  distortionMode="swirl"
-                  followSpeed={0.2}
-                  jitterStrength={4}
-                  jitterSpeed={4}
-                  sampleAverage
-                  tintColor="#FFFFFF"
-                  tintStrength={0.2}
-                  className="rounded-xl border border-neutral-800 shadow-lg"
-                />
-              </div>
-            </div>
-            {/* Decorative corners */}
-            <div className="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-blue-500/50" />
-            <div className="absolute -top-1 -right-1 w-3 h-3 border-t-2 border-r-2 border-purple-500/50" />
-            <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b-2 border-l-2 border-blue-500/50" />
-            <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-purple-500/50" />
-          </div>
         </div>
-
       </main>
+
+      <Transition />
     </>
   );
 }
