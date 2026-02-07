@@ -17,7 +17,8 @@ const config: Config = {
   			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
   		},
   		animation: {
-  			'float-slow': 'float 3s linear infinite'
+  			'float-slow': 'float 3s linear infinite',
+  			'fadeIn': 'fadeIn 0.5s ease-in-out forwards'
   		},
   		keyframes: {
   			float: {
@@ -35,6 +36,14 @@ const config: Config = {
   				},
   				'100%': {
   					transform: 'translate(0, -20%) rotate(0deg)'
+  				}
+  			},
+  			fadeIn: {
+  				'0%': {
+  					opacity: '0'
+  				},
+  				'100%': {
+  					opacity: '1'
   				}
   			}
   		},

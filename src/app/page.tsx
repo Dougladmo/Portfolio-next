@@ -1,14 +1,12 @@
 import { PixelatedCanvas } from "@/components/ui/pixelated-canvas";
 import Transition from "@/components/Transition";
-import Header from "@/components/Header";
-import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
     <>
       <main className="w-full flex overflow-hidden relative">
         {/* Background ambient glow */}
-        <div className="z-10 flex flex-col md:flex-row-reverse md:justify-between md:items-center items-center justify-start text-center md:text-left gap-3 md:gap-12 relative max-w-7xl mx-auto px-4 w-full h-full py-0 md:py-8">
+        <div className="z-10 flex flex-col md:flex-row-reverse md:justify-between md:items-center items-center justify-start text-center md:text-left gap-3 md:gap-12 relative max-w-7xl mx-auto px-4 w-full h-full py-0 md:pt-16">
           {/* Right Content - Visual Interaction */}
           <div className="flex justify-center py-1 scale-[0.7] md:scale-100">
             <div className="relative p-2 border border-white/10 bg-white/5 rounded-lg backdrop-blur-sm shadow-2xl">

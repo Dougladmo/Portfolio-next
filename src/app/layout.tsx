@@ -3,6 +3,7 @@ import { Outfit, Oswald } from "next/font/google"; // Changed Inter to Outfit an
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
+import ParticlesBackground from "@/components/ParticlesBackground";
 
 const outfit = Outfit({ subsets: ["latin"] }); // Primary font
 const oswald = Oswald({
@@ -24,8 +25,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${outfit.className} ${oswald.variable} h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]`}
+        className={`${outfit.className} ${oswald.variable} h-screen bg-[#0a0a0a]`}
       >
+        <ParticlesBackground />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none" />
         <Header />
         {children}
