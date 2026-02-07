@@ -2,6 +2,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { MotionValue, motion, useScroll, useTransform } from "motion/react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import {
   IconBrightnessDown,
   IconBrightnessUp,
@@ -172,10 +173,12 @@ export const Lid = ({
       >
         <div className="absolute inset-0 rounded-lg bg-[#0a0a0a]/30 backdrop-blur-sm" />
         {src ? (
-          <img
+          <Image
             src={src as string}
             alt="macbook screen content"
-            className="absolute inset-0 h-full w-full rounded-lg object-cover object-left-top"
+            fill
+            className="rounded-lg object-cover object-left-top"
+            sizes="(max-width: 768px) 100vw, 32rem"
           />
         ) : (
           <div className="absolute inset-0 h-full w-full rounded-lg overflow-auto bg-gradient-to-b from-transparent via-transparent to-[#0a0a0a]/50">
