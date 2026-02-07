@@ -2,10 +2,18 @@ import { Oswald } from "next/font/google";
 import Transition from "@/components/Transition";
 import { FaReact, FaNodeJs, FaDocker, FaAws, FaGitAlt } from "react-icons/fa";
 import { SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiFirebase, SiPostgresql } from "react-icons/si";
+import ColourfulText from "@/components/ui/colourful-text";
 
 const oswald = Oswald({ subsets: ["latin"] });
 
 export default function About() {
+  const bioParagraphs = [
+    "Olá! Sou o Douglas, Engenheiro de Software com mais de 3 anos de experiência, especializado em desenvolvimento full-stack e tecnologias web modernas. Minha jornada vai do frontend à arquitetura backend, com foco na construção de aplicações escaláveis e centradas no usuário usando React, Next.js, React Native e TypeScript.",
+    "Minha expertise inclui desenvolvimento front-end abrangente com HTML5, CSS3, JavaScript e ecossistema React avançado, além de soluções backend robustas. Arquitetei infraestruturas serverless usando serviços AWS como Lambda, API Gateway, DynamoDB, S3 e SES, garantindo escalabilidade e eficiência de custos.",
+    "Atualmente, sou Frontend Developer na Pepperlaw AI, onde liderei uma reestruturação completa da UI de uma base de código gerada por IA, transformando-a em uma aplicação pixel-perfect e de alta performance. Desenvolvi um editor estilo Word com suporte a Markdown, comentários e exportação multi-formato, e integrei WOPI (Web Application Open Platform Interface).",
+    "Aplico consistentemente as melhores práticas em otimização de SEO, ajuste de performance (alcançando pontuações de 95+ no Google PageSpeed), e qualidade de código. Minha abordagem combina excelência técnica com pensamento estratégico, sempre visando entregar soluções inovadoras que resolvem problemas do mundo real usando tecnologias de ponta e metodologias modernas de desenvolvimento."
+  ];
+
   const skills = [
     { name: "React", icon: <FaReact className="text-[#61DAFB]" /> },
     { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
@@ -22,35 +30,34 @@ export default function About() {
 
   return (
     <>
-      <main className="w-full flex min-h-screen overflow-hidden relative pt-24 pb-32 md:pb-0">
-        <div className="max-w-7xl mx-auto px-4 w-full h-full flex flex-col md:flex-row gap-12 items-start md:items-center relative z-10">
+      <main className="w-full flex overflow-hidden relative pt-20 pb-32 md:pt-10 md:pb-20">
+        <div className="max-w-7xl mx-auto px-4 w-full h-full flex flex-col md:flex-row gap-8 md:gap-12 items-start md:items-center relative z-10">
 
           {/* Left Content - Bio */}
           <div className="flex-1 space-y-8 animate-fade-in-up">
-            <h1 className={`${oswald.className} text-5xl md:text-7xl font-bold tracking-tighter text-white drop-shadow-2xl`}>
-              SOBRE <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">MIM</span>
+            <h1 className={`text-5xl uppercase md:text-7xl font-bold tracking-tighter text-white drop-shadow-2xl`}>
+              Sobre <ColourfulText text="mim" />
             </h1>
 
-            <div className="relative p-6 md:p-8 border border-white/10 bg-white/5 rounded-2xl backdrop-blur-md shadow-2xl">
-              <p className="text-gray-300 text-lg leading-relaxed font-light">
-                Olá! Sou o Douglas, Engenheiro de Software com mais de 3 anos de experiência, especializado em desenvolvimento full-stack e tecnologias web modernas.
-                Minha jornada vai do frontend à arquitetura backend, com foco na construção de aplicações escaláveis e centradas no usuário.
-              </p>
-              <br />
-              <p className="text-gray-300 text-lg leading-relaxed font-light">
-                Tenho experiência abrangente em desenvolvimento de soluções robustas, arquitetando infraestruturas serverless escaláveis com AWS
-                (Lambda, API Gateway, DynamoDB) e integrando serviços avançados para entregar funcionalidades de alto valor.
-              </p>
+            <div className="relative border border-white/10 bg-white/5 rounded-2xl backdrop-blur-md shadow-2xl overflow-hidden">
+              <div className="p-6 md:p-8 space-y-4 max-h-[52vh] overflow-y-auto custom-scrollbar">
+                {bioParagraphs.map((paragraph, index) => (
+                  <p key={index} className="text-gray-300 text-lg leading-relaxed font-light">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
 
               {/* Decorative elements */}
-              <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-blue-500/50 rounded-tl-lg" />
-              <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-purple-500/50 rounded-br-lg" />
+              <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-blue-500/50 rounded-tl-lg pointer-events-none" />
+              <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-purple-500/50 rounded-br-lg pointer-events-none" />
             </div>
+
           </div>
 
           {/* Right Content - Skills */}
           <div className="flex-1 w-full animate-fade-in-up delay-200">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
               {skills.map((skill, index) => (
                 <div
                   key={index}
