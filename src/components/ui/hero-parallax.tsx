@@ -1,14 +1,15 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import {
   motion,
   useScroll,
   useTransform,
   useSpring,
   MotionValue,
-} from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
+} from "motion/react";
+
+
 
 export const HeroParallax = ({
   products,
@@ -43,7 +44,7 @@ export const HeroParallax = ({
     springConfig
   );
   const opacity = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [1, 1]),
+    useTransform(scrollYProgress, [0, 0.2], [0.2, 1]),
     springConfig
   );
   const rotateZ = useSpring(
@@ -51,13 +52,13 @@ export const HeroParallax = ({
     springConfig
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [0, 200]),
+    useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
     springConfig
   );
   return (
     <div
       ref={ref}
-      className="h-[200vh] overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -67,7 +68,7 @@ export const HeroParallax = ({
           translateY,
           opacity,
         }}
-        className="mt-20"
+        className=""
       >
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
           {firstRow.map((product) => (
@@ -78,7 +79,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row mb-20 space-x-20 ">
+        <motion.div className="flex flex-row  mb-20 space-x-20 ">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
@@ -103,14 +104,17 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py20 px-4 w-full left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold text-white font-[family-name:var(--font-oswald)]">
-        Meus Projetos
-      </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 text-gray-400 font-[family-name:var(--font-outfit)]">
-        Explorando tecnologias modernas e criando experiências únicas através
-        de código limpo e design inovador.
-      </p>
+    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
+      <div className="relative bottom-10 md:bottom-32">
+        <h1 className="text-5xl text-center md:text-left md:text-7xl font-bold dark:text-white">
+          Criando Soluções <br /> Digitais Incríveis
+        </h1>
+        <p className="max-w-2xl text-lg text-center md:text-left md:text-xl mt-8 dark:text-neutral-200">
+          Desenvolvedor full stack apaixonado por transformar ideias em produtos
+          digitais elegantes e funcionais. Especializado em tecnologias modernas
+          como React, Next.js e TypeScript.
+        </p>
+      </div>
     </div>
   );
 };
@@ -135,26 +139,24 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative flex-shrink-0"
+      className="group/product h-96 w-[30rem] relative shrink-0"
     >
-      <Link
+      <a
         href={product.link}
-        className="block group-hover/product:shadow-[0_0_40px_-10px_rgba(139,92,246,0.5)] transition-shadow duration-300"
+        className="block group-hover/product:shadow-2xl "
       >
-        <div className="relative h-full w-full overflow-hidden rounded-2xl bg-slate-900/50 backdrop-blur-sm border border-white/10">
-          <Image
-            src={product.thumbnail}
-            height={600}
-            width={600}
-            className="object-cover object-left-top absolute h-full w-full inset-0"
-            alt={product.title}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover/product:opacity-100 transition-opacity duration-300" />
-          <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white text-xl font-bold font-[family-name:var(--font-oswald)] transition-opacity duration-300">
-            {product.title}
-          </h2>
-        </div>
-      </Link>
+        <Image
+          src={product.thumbnail}
+          height={600}
+          width={600}
+          className="object-cover object-left-top absolute h-full w-full inset-0"
+          alt={product.title}
+        />
+      </a>
+      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
+      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+        {product.title}
+      </h2>
     </motion.div>
   );
 };

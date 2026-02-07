@@ -3,9 +3,9 @@ import { HeroParallaxDemo } from "@/components/HeroParallaxDemo"
 
 const Projetos = () => {
   return (
-    <div className="text-white min-h-screen">
+    <div className="text-white">
       <Transition />
-      <div className="pt-20 pb-32 md:pb-40 opacity-0 animate-[fadeIn_0.5s_ease-in-out_1.8s_forwards]">
+      <div className="opacity-0 animate-[fadeIn_0.5s_ease-in-out_1.8s_forwards]">
         <HeroParallaxDemo />
       </div>
     </div>
