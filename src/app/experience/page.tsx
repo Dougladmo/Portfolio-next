@@ -1,7 +1,8 @@
 "use client";
 import { Oswald } from "next/font/google";
 import Transition from "@/components/Transition";
-import { MacbookScroll } from "@/components/ui/macbook-scroll";
+import { CometCard } from "@/components/ui/comet-card";
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
 
 const oswald = Oswald({ subsets: ["latin"] });
 
@@ -49,7 +50,7 @@ export default function Experience() {
       skills: ["React", "Next.js", "TypeScript", "MongoDB", "Supabase", "SEO", "n8n"]
     },
     {
-      role: "Full-stack Mobile Developer (Pleno)",
+      role: "Full-stack Mobile Developer ",
       company: "C2A Soluções Em Tecnologia",
       period: "Out 2024 - Abr 2025 (7 meses)",
       location: "Belém, Pará, Brasil",
@@ -65,58 +66,69 @@ export default function Experience() {
 
   return (
     <>
-      <main className="w-full min-h-screen relative overflow-y-auto bg-[#0a0a0a]">
-        {/* MacBook Scroll Effect */}
-        <MacbookScroll
-          title={
-            <span className={`${oswald.className} text-5xl md:text-7xl font-bold tracking-tighter`}>
-              MINHA <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">JORNADA</span>
-            </span>
-          }
-        >
-          {/* Experience Timeline inside MacBook Screen */}
-          <div className="w-full h-full bg-transparent p-8 overflow-auto">
-            <div className="relative border-l-2 border-white/10 space-y-8">
+      <main className="w-full flex min-h-screen overflow-hidden relative">
+        <div className="max-w-6xl mx-auto w-full px-4 py-20 md:py-32 md:pb-16">
+
+          {/* Page Title */}
+          <div className="mb-16 text-center">
+            <h1 className={`${oswald.className} text-5xl flex justify-center md:text-7xl font-bold text-white tracking-tighter mb-4`}>
+              <PointerHighlight>MINHA <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">JORNADA</span></PointerHighlight>
+            </h1>
+            <p className="text-gray-400 text-lg md:text-xl">Experiências Profissionais, Formação e Certificações</p>
+          </div>
+
+          {/* Experience Timeline Section */}
+          <div className="mb-20">
+            <h2 className={`${oswald.className} text-3xl md:text-5xl font-bold text-white mb-12 flex items-center gap-3`}>
+              <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
+              Experiência Profissional
+            </h2>
+
+            <div className="relative border-l-2 border-white/10 space-y-12 ml-4">
               {experiences.map((exp, index) => (
                 <div key={index} className="mb-8 ml-6 relative group">
                   {/* Timeline dot */}
                   <div className="absolute -left-[27px] w-4 h-4 bg-blue-500 rounded-full border-2 border-[#0a0a0a] group-hover:bg-purple-500 transition-colors duration-300" />
 
                   {/* Content Card */}
-                  <div className="p-4 border border-white/10 bg-[#0a0a0a]/80 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:bg-[#0a0a0a]/90 relative overflow-hidden">
+                  <div className="p-6 md:p-8 border border-white/10 bg-white/5 rounded-2xl backdrop-blur-md transition-all duration-300 hover:scale-[1.01] hover:bg-white/10 relative overflow-hidden shadow-2xl">
 
                     {/* Glowing border effect on hover */}
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-purple-500/10 to-pink-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                    <div className="flex flex-col gap-2 mb-3">
+                    {/* Decorative corners */}
+                    <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-blue-500/50 rounded-tl-lg" />
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-purple-500/50 rounded-br-lg" />
+
+                    <div className="flex flex-col gap-3 mb-4">
                       <div>
-                        <h3 className={`${oswald.className} text-lg font-bold text-white`}>{exp.role}</h3>
-                        <p className="text-blue-400 font-medium text-sm">{exp.company}</p>
-                        {exp.location && <p className="text-gray-500 text-xs">{exp.location}</p>}
+                        <h3 className={`${oswald.className} text-2xl md:text-3xl font-bold text-white mb-1`}>{exp.role}</h3>
+                        <p className="text-blue-400 font-semibold text-lg md:text-xl">{exp.company}</p>
+                        {exp.location && <p className="text-gray-500 text-sm mt-1">{exp.location}</p>}
                       </div>
-                      <span className="text-gray-400 text-xs bg-white/5 px-2 py-1 rounded-full border border-white/10 w-fit">
+                      <span className="text-gray-400 text-sm bg-white/5 px-3 py-1.5 rounded-full border border-white/10 w-fit">
                         {exp.period}
                       </span>
                     </div>
 
-                    <p className="text-gray-300 mb-3 leading-relaxed font-light text-xs">
+                    <p className="text-gray-300 mb-4 leading-relaxed text-base">
                       {exp.description}
                     </p>
 
                     {exp.highlights && exp.highlights.length > 0 && (
-                      <ul className="space-y-1 mb-3">
+                      <ul className="space-y-2 mb-4">
                         {exp.highlights.map((highlight, highlightIndex) => (
-                          <li key={highlightIndex} className="flex items-start gap-2 text-gray-300 text-[10px]">
-                            <span className="text-blue-400 mt-0.5 flex-shrink-0">▸</span>
-                            <span className="leading-relaxed font-light">{highlight}</span>
+                          <li key={highlightIndex} className="flex items-start gap-3 text-gray-300 text-sm">
+                            <span className="text-blue-400 mt-1 flex-shrink-0 text-lg">▸</span>
+                            <span className="leading-relaxed">{highlight}</span>
                           </li>
                         ))}
                       </ul>
                     )}
 
-                    <div className="flex flex-wrap gap-1">
+                    <div className="flex flex-wrap gap-2">
                       {exp.skills.map((skill, skillIndex) => (
-                        <span key={skillIndex} className="text-[9px] font-medium text-gray-300 bg-white/5 px-1.5 py-0.5 rounded border border-white/5">
+                        <span key={skillIndex} className="text-xs font-medium text-gray-300 bg-white/10 px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/20 transition-colors">
                           {skill}
                         </span>
                       ))}
@@ -126,23 +138,23 @@ export default function Experience() {
               ))}
             </div>
           </div>
-        </MacbookScroll>
-
-        {/* Education & Certifications Section - After MacBook */}
-        <div className="max-w-4xl mx-auto w-full px-4 py-16 relative z-10">
 
           {/* Education Section */}
-          <div className="mb-12">
-            <h2 className={`${oswald.className} text-3xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3`}>
+          <div className="mb-20">
+            <h2 className={`${oswald.className} text-3xl md:text-5xl font-bold text-white mb-12 flex items-center gap-3`}>
               <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
               Formação Acadêmica
             </h2>
-            <div className="relative p-6 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
+            <div className="relative p-8 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md hover:bg-white/10 transition-all duration-300 shadow-2xl">
+              {/* Decorative corners */}
+              <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-blue-500/50 rounded-tl-lg" />
+              <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-purple-500/50 rounded-br-lg" />
+
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
-                  <p className="text-white font-bold text-xl mb-1">Bacharel em Ciência da Computação</p>
-                  <p className="text-blue-400 font-medium text-lg">UNAMA - Universidade da Amazônia</p>
-                  <p className="text-gray-400 text-sm mt-2">Belém, Pará, Brasil</p>
+                  <p className="text-white font-bold text-2xl mb-2">Bacharel em Ciência da Computação</p>
+                  <p className="text-blue-400 font-semibold text-xl">UNAMA - Universidade da Amazônia</p>
+                  <p className="text-gray-400 text-base mt-2">Belém, Pará, Brasil</p>
                 </div>
                 <div className="text-gray-400 text-sm bg-white/5 px-4 py-2 rounded-full border border-white/10 w-fit whitespace-nowrap">
                   Fev 2022 - Dez 2025
@@ -152,132 +164,228 @@ export default function Experience() {
           </div>
 
           {/* Professional Certifications */}
-          <div className="mb-12">
-            <h2 className={`${oswald.className} text-3xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3`}>
+          <div className="mb-20">
+            <h2 className={`${oswald.className} text-3xl md:text-5xl font-bold text-white mb-12 flex items-center gap-3`}>
               <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
               Certificações Profissionais
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="group relative p-5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-white font-semibold text-base mb-2">Professional Day 2025</p>
-                <p className="text-gray-400 text-sm mb-1">Dell Technologies</p>
-                <p className="text-gray-500 text-xs">Out 2025</p>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Professional Day 2025</p>
+                    <p className="text-gray-400 text-base mb-1">Dell Technologies</p>
+                    <p className="text-gray-500 text-sm">Out 2025</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
 
-              <div className="group relative p-5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-white font-semibold text-base mb-2">Scrum Utilitário</p>
-                <p className="text-gray-400 text-sm mb-1">MindMaster Treinamentos</p>
-                <p className="text-gray-500 text-xs">Out 2024</p>
-              </div>
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Scrum Utilitário</p>
+                    <p className="text-gray-400 text-base mb-1">MindMaster Treinamentos</p>
+                    <p className="text-gray-500 text-sm">Out 2024</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
 
-              <div className="group relative p-5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-white font-semibold text-base mb-2">Front-end do Zero</p>
-                <p className="text-gray-400 text-sm mb-1">Rocketseat</p>
-                <p className="text-gray-500 text-xs">Out 2024</p>
-              </div>
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Front-end do Zero</p>
+                    <p className="text-gray-400 text-base mb-1">Rocketseat</p>
+                    <p className="text-gray-500 text-sm">Out 2024</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
 
-              <div className="group relative p-5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-white font-semibold text-base mb-2">Introdução ao Front-End Development</p>
-                <p className="text-gray-400 text-sm mb-1">Meta via Coursera</p>
-                <p className="text-gray-500 text-xs">Mai 2024</p>
-              </div>
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Introdução ao Front-End Development</p>
+                    <p className="text-gray-400 text-base mb-1">Meta via Coursera</p>
+                    <p className="text-gray-500 text-sm">Mai 2024</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
 
-              <div className="group relative p-5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-white font-semibold text-base mb-2">Desenvolvimento Web: HTML, CSS, JS, React, TS</p>
-                <p className="text-gray-400 text-sm mb-1">Udemy</p>
-                <p className="text-gray-500 text-xs">Abr 2024</p>
-              </div>
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Desenvolvimento Web: HTML, CSS, JS, React, TS</p>
+                    <p className="text-gray-400 text-base mb-1">Udemy</p>
+                    <p className="text-gray-500 text-sm">Abr 2024</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
 
-              <div className="group relative p-5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-white font-semibold text-base mb-2">Scrum Fundamentals Certified (SFC)</p>
-                <p className="text-gray-400 text-sm mb-1">SCRUMstudy - Accreditation Body</p>
-                <p className="text-gray-500 text-xs">Abr 2024</p>
-              </div>
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Scrum Fundamentals Certified (SFC)</p>
+                    <p className="text-gray-400 text-base mb-1">SCRUMstudy - Accreditation Body</p>
+                    <p className="text-gray-500 text-sm">Abr 2024</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
 
-              <div className="group relative p-5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-white font-semibold text-base mb-2">Formação Java</p>
-                <p className="text-gray-400 text-sm mb-1">Rocketseat</p>
-                <p className="text-gray-500 text-xs">Mar 2024</p>
-              </div>
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Formação Java</p>
+                    <p className="text-gray-400 text-base mb-1">Rocketseat</p>
+                    <p className="text-gray-500 text-sm">Mar 2024</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
 
-              <div className="group relative p-5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-white font-semibold text-base mb-2">Trabalhando em um Mundo Digital</p>
-                <p className="text-gray-400 text-sm mb-1">IBM</p>
-                <p className="text-gray-500 text-xs">Mar 2024</p>
-              </div>
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Trabalhando em um Mundo Digital</p>
+                    <p className="text-gray-400 text-base mb-1">IBM</p>
+                    <p className="text-gray-500 text-sm">Mar 2024</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
 
-              <div className="group relative p-5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-white font-semibold text-base mb-2">IA-900 (Azure AI Fundamentals)</p>
-                <p className="text-gray-400 text-sm mb-1">Microsoft</p>
-                <p className="text-gray-500 text-xs">Mar 2024</p>
-              </div>
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">IA-900 (Azure AI Fundamentals)</p>
+                    <p className="text-gray-400 text-base mb-1">Microsoft</p>
+                    <p className="text-gray-500 text-sm">Mar 2024</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
             </div>
           </div>
 
           {/* Cursos de Desenvolvimento */}
           <div className="pb-24">
-            <h2 className={`${oswald.className} text-3xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3`}>
+            <h2 className={`${oswald.className} text-3xl md:text-5xl font-bold text-white mb-12 flex items-center gap-3`}>
               <div className="h-1 w-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />
               Cursos de Desenvolvimento
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="group relative p-5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-white font-semibold text-base mb-2">Git com Blue</p>
-                <p className="text-gray-400 text-sm mb-1">Blue EdTech</p>
-                <p className="text-gray-500 text-xs">Ago 2023</p>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Git com Blue</p>
+                    <p className="text-gray-400 text-base mb-1">Blue EdTech</p>
+                    <p className="text-gray-500 text-sm">Ago 2023</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
 
-              <div className="group relative p-5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-white font-semibold text-base mb-2">Páginas Web com HTML5</p>
-                <p className="text-gray-400 text-sm mb-1">Fundação Bradesco</p>
-                <p className="text-gray-500 text-xs">Ago 2023</p>
-              </div>
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Páginas Web com HTML5</p>
+                    <p className="text-gray-400 text-base mb-1">Fundação Bradesco</p>
+                    <p className="text-gray-500 text-sm">Ago 2023</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
 
-              <div className="group relative p-5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-white font-semibold text-base mb-2">Técnicas Lógicas para JavaScript</p>
-                <p className="text-gray-400 text-sm mb-1">FIAP</p>
-                <p className="text-gray-500 text-xs">Ago 2023</p>
-              </div>
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Técnicas Lógicas para JavaScript</p>
+                    <p className="text-gray-400 text-base mb-1">FIAP</p>
+                    <p className="text-gray-500 text-sm">Ago 2023</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
 
-              <div className="group relative p-5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-white font-semibold text-base mb-2">Estilizando Páginas com CSS</p>
-                <p className="text-gray-400 text-sm mb-1">Fundação Bradesco</p>
-                <p className="text-gray-500 text-xs">Ago 2023</p>
-              </div>
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Estilizando Páginas com CSS</p>
+                    <p className="text-gray-400 text-base mb-1">Fundação Bradesco</p>
+                    <p className="text-gray-500 text-sm">Ago 2023</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
 
-              <div className="group relative p-5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-white font-semibold text-base mb-2">Versionamento de Código com Git</p>
-                <p className="text-gray-400 text-sm mb-1">FIAP</p>
-                <p className="text-gray-500 text-xs">Ago 2023</p>
-              </div>
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">Versionamento de Código com Git</p>
+                    <p className="text-gray-400 text-base mb-1">FIAP</p>
+                    <p className="text-gray-500 text-sm">Ago 2023</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
 
-              <div className="group relative p-5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-white font-semibold text-base mb-2">JavaScript</p>
-                <p className="text-gray-400 text-sm mb-1">Curso em Vídeo</p>
-                <p className="text-gray-500 text-xs">Out 2020</p>
-              </div>
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">JavaScript</p>
+                    <p className="text-gray-400 text-base mb-1">Curso em Vídeo</p>
+                    <p className="text-gray-500 text-sm">Out 2020</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
 
-              <div className="group relative p-5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-white font-semibold text-base mb-2">DISCOVER</p>
-                <p className="text-gray-400 text-sm mb-1">Rocketseat</p>
-                <p className="text-gray-500 text-xs">Jun 2020</p>
-              </div>
+              <CometCard rotateDepth={12} translateDepth={12}>
+                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px] flex flex-col justify-between">
+                  <div>
+                    <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4" />
+                    <p className="text-white font-semibold text-lg mb-2">DISCOVER</p>
+                    <p className="text-gray-400 text-base mb-1">Rocketseat</p>
+                    <p className="text-gray-500 text-sm">Jun 2020</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-purple-500/40 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-pink-500/40 rounded-br-lg pointer-events-none" />
+                </div>
+              </CometCard>
             </div>
           </div>
 

@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+  		perspective: {
+  			distant: '1000px',
+  		},
   		boxShadow: {
   			full: '0px 0px 90px -30px  #000'
   		},

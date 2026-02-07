@@ -106,13 +106,16 @@ export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
       <div className="relative bottom-10 md:bottom-32">
-        <h1 className="text-5xl text-center md:text-left md:text-7xl font-bold dark:text-white">
-          Criando Soluções <br /> Digitais Incríveis
+        <h1 className="uppercase text-5xl text-center md:text-left md:text-6xl font-bold dark:text-white">
+          Criando Soluções <br /> Digitais <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">Incríveis</span>I
         </h1>
         <p className="max-w-2xl text-lg text-center md:text-left md:text-xl mt-8 dark:text-neutral-200">
           Desenvolvedor full stack apaixonado por transformar ideias em produtos
           digitais elegantes e funcionais. Especializado em tecnologias modernas
           como React, Next.js e TypeScript.
+        </p>
+        <p className="max-w-2xl text-base text-center md:text-left md:text-lg mt-4 dark:text-neutral-400">
+          Projetos freelancer e desenvolvidos do zero, criados com dedicação e atenção aos detalhes.
         </p>
       </div>
     </div>

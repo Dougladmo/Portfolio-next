@@ -30,3 +30,12 @@
   scrollbar-width: thin;
   scrollbar-color: #8b5cf6 rgba(255, 255, 255, 0.05);
 }
+
+/* 3D Transform Support for CometCard */
+.perspective-distant {
+  perspective: 1000px;
+}
+
+.transform-3d {
+  transform-style: preserve-3d;
+}

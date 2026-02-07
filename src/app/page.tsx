@@ -46,7 +46,7 @@ export default function Home() {
           <div className="flex flex-col gap-3 md:gap-6">
             {/* Top Text Group */}
             <div className="space-y-1 md:space-y-2 animate-fade-in-up">
-              <h1 className="text-4xl sm:text-5xl flex flex-col gap-4 md:text-6xl lg:text-7xl font-bold font-oswald tracking-tighter text-white drop-shadow-2xl">
+              <h1 className="text-4xl sm:text-4xl uppercase flex flex-col gap-4 md:text-5xl lg:text-6xl font-bold font-oswald tracking-tighter text-white drop-shadow-2xl">
                   <span>código, design e </span> <span> <Cover > performance.</Cover></span> 
               </h1>
             </div>
