@@ -2,17 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --bg-url: url(../../public/bg-desktop.jpg);
-  }
-  
-  .light {
-    --bg-url: url(../../public/bg-desktop.jpg);
-  }
-
-body {
-  background-image: var(--bg-url);
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
+.font-oswald {
+  font-family: var(--font-oswald), sans-serif;
 }
