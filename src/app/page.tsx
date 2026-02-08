@@ -44,7 +44,7 @@ export default function Home() {
 
             {/* Bottom Content */}
             <div className="space-y-3 md:space-y-4 animate-fade-in-up delay-200">
-              <h2 className="text-sm md:text-lg font-light text-gray-400 tracking-wide">
+              <h2 className="text-sm md:text-lg max-w-md font-light text-gray-400 tracking-wide">
                 {t.home.subtitle}
               </h2>
 
