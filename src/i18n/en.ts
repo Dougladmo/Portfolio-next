@@ -4,7 +4,7 @@ export const en: Translations = {
   home: {
     heroLine1: "code, design and ",
     heroLine2: "performance.",
-    subtitle: "Full Stack Developer & UX Enthusiast. Interested in distributed systems architecture and AI applied to products.",
+    subtitle: "Software Engineer full Stack & UX Enthusiast. Interested in distributed systems architecture and AI applied to products.",
     viewProjects: "View Projects",
     getInTouch: "Get in touch",
   },

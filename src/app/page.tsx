@@ -38,7 +38,7 @@ export default function Home() {
             {/* Top Text Group */}
             <div className="space-y-1 md:space-y-2 animate-fade-in-up">
               <h1 className="text-4xl sm:text-4xl uppercase flex flex-col gap-4 md:text-5xl lg:text-6xl font-bold font-oswald tracking-tighter text-white drop-shadow-2xl">
-                  <span>{t.home.heroLine1}</span> <span> <Cover>{t.home.heroLine2}</Cover></span>
+                  <span>{t.home.heroLine1}</span> <span > <Cover className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">{t.home.heroLine2}</Cover></span>
               </h1>
             </div>
 
