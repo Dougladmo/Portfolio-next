@@ -18,8 +18,13 @@ const oswald = Oswald({
 }); // Heading font
 
 export const metadata: Metadata = {
-  title: "Douglas Oliveira | Full Stack Developer", // Updated title
-  description: "Portfolio de Douglas Oliveira", // Updated description
+  title: "Douglas Oliveira | Full Stack Developer",
+  description: "Portfolio de Douglas Oliveira",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
