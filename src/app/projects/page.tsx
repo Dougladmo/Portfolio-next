@@ -3,67 +3,13 @@ import { HeroParallaxDemo } from "@/components/HeroParallaxDemo"
 import { CometCard } from "@/components/ui/comet-card"
 import { PointerHighlight } from "@/components/ui/pointer-highlight"
 import { Oswald } from "next/font/google"
+import { useLanguage } from "@/components/LanguageContext"
 
 const oswald = Oswald({ subsets: ["latin"] });
 
-const projectStacks = [
-  {
-    title: "Moonbeam",
-    description: "Plataforma de escrita assistida por IA",
-    stack: ["Next.js", "TypeScript", "OpenAI", "Tailwind CSS", "PostgreSQL"],
-    category: "IA & Produtividade"
-  },
-  {
-    title: "Cursor",
-    description: "Editor de código com IA integrada",
-    stack: ["React", "Electron", "Node.js", "AI Models", "Monaco Editor"],
-    category: "Ferramentas de Desenvolvimento"
-  },
-  {
-    title: "Rogue",
-    description: "Sistema de gerenciamento de projetos",
-    stack: ["Vue.js", "Express", "MongoDB", "Socket.io", "Redis"],
-    category: "Gerenciamento"
-  },
-  {
-    title: "Editorially",
-    description: "Editor colaborativo em tempo real",
-    stack: ["React", "Slate.js", "WebSockets", "Node.js", "AWS"],
-    category: "Colaboração"
-  },
-  {
-    title: "Editrix AI",
-    description: "Editor de conteúdo com IA",
-    stack: ["Next.js", "GPT-4", "Supabase", "Vercel", "Tailwind CSS"],
-    category: "IA & Edição"
-  },
-  {
-    title: "Pixel Perfect",
-    description: "Ferramenta de design para desenvolvedores",
-    stack: ["React", "Three.js", "WebGL", "TypeScript", "Framer Motion"],
-    category: "Design & UI"
-  },
-  {
-    title: "Algochurn",
-    description: "Plataforma de prática de algoritmos",
-    stack: ["React", "Python", "FastAPI", "Docker", "PostgreSQL"],
-    category: "Educação"
-  },
-  {
-    title: "Aceternity UI",
-    description: "Biblioteca de componentes modernos",
-    stack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Radix UI"],
-    category: "UI Library"
-  },
-  {
-    title: "Tailwind Master Kit",
-    description: "Kit completo de templates Tailwind",
-    stack: ["HTML", "Tailwind CSS", "Alpine.js", "PostCSS", "Vite"],
-    category: "Templates"
-  }
-];
-
 const Projetos = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="text-white">
       <div className="opacity-0 animate-[fadeIn_0.5s_ease-in-out_1.8s_forwards]">
@@ -77,16 +23,16 @@ const Projetos = () => {
           {/* Section Title */}
           <div className="mb-16 text-center">
             <h2 className={`${oswald.className} text-4xl md:text-6xl font-bold text-white mb-4 flex justify-center`}>
-              <PointerHighlight>TECNOLOGIAS <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">UTILIZADAS</span></PointerHighlight>
+              <PointerHighlight>{t.projects.techHeadingPrefix}<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">{t.projects.techHeadingHighlight}</span></PointerHighlight>
             </h2>
             <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
-              Conheça as stacks tecnológicas por trás de cada projeto
+              {t.projects.techSubtitle}
             </p>
           </div>
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projectStacks.map((project, index) => (
+            {t.projects.cards.map((project, index) => (
               <CometCard key={index} rotateDepth={12} translateDepth={12}>
                 <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[280px] flex flex-col">
 
@@ -136,20 +82,20 @@ const Projetos = () => {
               <div className={`${oswald.className} text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-2`}>
                 15+
               </div>
-              <p className="text-gray-400 text-sm md:text-base">Projetos Concluídos</p>
+              <p className="text-gray-400 text-sm md:text-base">{t.projects.statProjects}</p>
             </div>
             <div className="text-center">
               <div className={`${oswald.className} text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 mb-2`}>
                 10+
               </div>
-              <p className="text-gray-400 text-sm md:text-base">Tecnologias e Ferramentas</p>
+              <p className="text-gray-400 text-sm md:text-base">{t.projects.statTech}</p>
             </div>
-            
+
             <div className="text-center">
               <div className={`${oswald.className} text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500 mb-2`}>
                 3+
               </div>
-              <p className="text-gray-400 text-sm md:text-base">Anos de Experiência</p>
+              <p className="text-gray-400 text-sm md:text-base">{t.projects.statYears}</p>
             </div>
           </div>
 

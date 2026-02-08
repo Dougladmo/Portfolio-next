@@ -7,16 +7,12 @@ import ColourfulText from "@/components/ui/colourful-text";
 import { EncryptedText } from "@/components/ui/encrypted-text";
 import { CometCard } from "@/components/ui/comet-card";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
+import { useLanguage } from "@/components/LanguageContext";
 
 const oswald = Oswald({ subsets: ["latin"] });
 
 export default function About() {
-  const bioParagraphs = [
-    "Olá! Sou o Douglas, Engenheiro de Software com mais de 3 anos de experiência, especializado em desenvolvimento full-stack e tecnologias web modernas. Minha jornada vai do frontend à arquitetura backend, com foco na construção de aplicações escaláveis e centradas no usuário usando React, Next.js, React Native e TypeScript.",
-    "Minha expertise inclui desenvolvimento front-end abrangente com HTML5, CSS3, JavaScript e ecossistema React avançado, além de soluções backend robustas. Arquitetei infraestruturas serverless usando serviços AWS como Lambda, API Gateway, DynamoDB, S3 e SES, garantindo escalabilidade e eficiência de custos.",
-    "Atualmente, sou Frontend Developer na Pepperlaw AI, onde liderei uma reestruturação completa da UI de uma base de código gerada por IA, transformando-a em uma aplicação pixel-perfect e de alta performance. Desenvolvi um editor estilo Word com suporte a Markdown, comentários e exportação multi-formato, e integrei WOPI (Web Application Open Platform Interface).",
-    "Aplico consistentemente as melhores práticas em otimização de SEO, ajuste de performance (alcançando pontuações de 95+ no Google PageSpeed), e qualidade de código. Minha abordagem combina excelência técnica com pensamento estratégico, sempre visando entregar soluções inovadoras que resolvem problemas do mundo real usando tecnologias de ponta e metodologias modernas de desenvolvimento."
-  ];
+  const { t } = useLanguage();
 
   const skills = [
     { name: "React", icon: <FaReact className="text-[#61DAFB]" /> },
@@ -40,19 +36,14 @@ export default function About() {
           {/* Left Content - Bio */}
           <div className="flex-1 space-y-8 animate-fade-in-up">
             <h1 className={`text-5xl uppercase md:text-7xl font-bold tracking-tighter text-white drop-shadow-2xl`}>
-              <PointerHighlight>Sobre <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">mim</span></PointerHighlight>
+              <PointerHighlight>{t.about.headingPrefix}<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">{t.about.headingHighlight}</span></PointerHighlight>
             </h1>
 
             <div className="relative border border-white/10 bg-white/5 rounded-2xl backdrop-blur-md shadow-2xl overflow-hidden">
               <div className="p-6 md:p-8 space-y-4 max-h-[52vh] overflow-y-auto custom-scrollbar">
-                {bioParagraphs.map((paragraph, index) => (
+                {t.about.bioParagraphs.map((paragraph, index) => (
                   <p key={index} className="text-gray-300 text-lg leading-relaxed font-light">
-                    <EncryptedText
-                      text={paragraph}
-                      encryptedClassName="text-white"
-                      revealedClassName="dark:text-white text-white"
-                      revealDelayMs={15}
-                    />
+                    {paragraph}
                   </p>
                 ))}
               </div>

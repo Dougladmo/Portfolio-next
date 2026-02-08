@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import { TransitionProvider } from "@/components/TransitionContext";
+import { LanguageProvider } from "@/components/LanguageContext";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -34,9 +35,11 @@ export default function RootLayout({
         <ParticlesBackground />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none" />
         <TransitionProvider>
-          <Header />
-          {children}
-          <Navbar />
+          <LanguageProvider>
+            <Header />
+            {children}
+            <Navbar />
+          </LanguageProvider>
         </TransitionProvider>
       </body>
     </html>
