@@ -2,6 +2,8 @@
 import { HeroParallaxDemo } from "@/components/HeroParallaxDemo"
 import { CometCard } from "@/components/ui/comet-card"
 import { PointerHighlight } from "@/components/ui/pointer-highlight"
+import { AnimatedTooltip, TooltipItem } from "@/components/ui/animated-tooltip"
+import { getTechIcon } from "@/utils/tech-icons"
 import { Oswald } from "next/font/google"
 import { useLanguage } from "@/components/LanguageContext"
 
@@ -32,48 +34,53 @@ const Projetos = () => {
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {t.projects.cards.map((project, index) => (
-              <CometCard key={index} rotateDepth={12} translateDepth={12}>
-                <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[280px] flex flex-col">
+            {t.projects.cards.map((project, index) => {
+              // Preparar dados para AnimatedTooltip
+              const stackItems: TooltipItem[] = project.stack.map((tech, idx) => {
+                const IconComponent = getTechIcon(tech);
+                return {
+                  id: idx,
+                  name: tech,
+                  image: <IconComponent className="w-6 h-6" />,
+                };
+              });
 
-                  {/* Category Badge */}
-                  <div className="mb-4">
-                    <span className="text-xs font-medium text-blue-400 bg-blue-500/10 px-3 py-1.5 rounded-full border border-blue-500/20">
-                      {project.category}
-                    </span>
-                  </div>
+              return (
+                <CometCard key={index} rotateDepth={12} translateDepth={12}>
+                  <div className="relative p-6 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[280px] flex flex-col">
 
-                  {/* Project Title */}
-                  <h3 className={`${oswald.className} text-2xl font-bold text-white mb-2`}>
-                    {project.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-gray-400 text-sm mb-4 flex-grow">
-                    {project.description}
-                  </p>
-
-                  {/* Divider */}
-                  <div className="h-px w-full bg-gradient-to-r from-blue-500/0 via-purple-500/50 to-pink-500/0 mb-4" />
-
-                  {/* Tech Stack Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.stack.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="text-xs font-medium text-gray-300 bg-white/10 px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/20 hover:border-purple-500/30 transition-all duration-300"
-                      >
-                        {tech}
+                    {/* Category Badge */}
+                    <div className="mb-4">
+                      <span className="text-xs font-medium text-blue-400 bg-blue-500/10 px-3 py-1.5 rounded-full border border-blue-500/20">
+                        {project.category}
                       </span>
-                    ))}
-                  </div>
+                    </div>
 
-                  {/* Decorative Corners */}
-                  <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
-                  <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
-                </div>
-              </CometCard>
-            ))}
+                    {/* Project Title */}
+                    <h3 className={`${oswald.className} text-2xl font-bold text-white mb-2`}>
+                      {project.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-gray-400 text-sm mb-4 flex-grow">
+                      {project.description}
+                    </p>
+
+                    {/* Divider */}
+                    <div className="h-px w-full bg-gradient-to-r from-blue-500/0 via-purple-500/50 to-pink-500/0 mb-4" />
+
+                    {/* Tech Stack com AnimatedTooltip */}
+                    <div className="flex items-center">
+                      <AnimatedTooltip items={stackItems} />
+                    </div>
+
+                    {/* Decorative Corners */}
+                    <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-blue-500/40 rounded-tl-lg pointer-events-none" />
+                    <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-purple-500/40 rounded-br-lg pointer-events-none" />
+                  </div>
+                </CometCard>
+              );
+            })}
           </div>
 
           {/* Stats Section */}
