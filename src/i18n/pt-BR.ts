@@ -4,7 +4,7 @@ export const ptBR: Translations = {
   home: {
     heroLine1: "código, design e ",
     heroLine2: "performance.",
-    subtitle: "Full Stack Developer & UI/UX Enthusiast",
+    subtitle: "Engenheiro de software full Stack & Entusiasta de UX. Interessado em arquitetura de sistemas distribuídos e IA aplicada a produtos.",
     viewProjects: "Ver Projetos",
     getInTouch: "Entre em contato",
   },
