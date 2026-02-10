@@ -239,10 +239,10 @@ export const en: Translations = {
         category: "Full Stack Platform",
       },
       {
-        title: "Pepperlaw UI",
-        description: "Complete design and codebase restructuring project for Pepperlaw. All design was recreated in Figma and implemented pixel perfect.",
-        stack: ["React", "Tailwind CSS", "Node.js", ".NET", "Azure"],
-        category: "UI/UX Redesign",
+        title: "My Mayor",
+        description: "Mobile application developed for city halls, focusing on transparency, public communication and citizen participation. Enables complaint registration and real-time tracking.",
+        stack: ["React Native", "AWS Lambda", "DynamoDB", "AWS S3"],
+        category: "Mobile App",
       },
       {
         title: "Recicle Aqui",
@@ -263,10 +263,10 @@ export const en: Translations = {
         category: "E-commerce",
       },
       {
-        title: "My Mayor",
-        description: "Mobile application developed for city halls, focusing on transparency, public communication and citizen participation. Enables complaint registration and real-time tracking.",
-        stack: ["React Native", "AWS Lambda", "DynamoDB", "AWS S3"],
-        category: "Mobile App",
+        title: "Pepperlaw UI",
+        description: "Complete design and codebase restructuring project for Pepperlaw. All design was recreated in Figma and implemented pixel perfect.",
+        stack: ["React", "Tailwind CSS", "Node.js", ".NET", "Azure"],
+        category: "UI/UX Redesign",
       },
       {
         title: "Farmfy",

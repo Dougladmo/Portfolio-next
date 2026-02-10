@@ -239,10 +239,10 @@ export const ptBR: Translations = {
         category: "Plataforma Full Stack",
       },
       {
-        title: "Pepperlaw UI",
-        description: "Projeto de reestruturação completa do design e da base de código da Pepperlaw. Todo o design foi recriado no Figma e implementado com pixel perfect.",
-        stack: ["React", "Tailwind CSS", "Node.js", ".NET", "Azure"],
-        category: "UI/UX Redesign",
+        title: "Meu Prefeito",
+        description: "Aplicativo mobile desenvolvido para prefeituras, com foco em transparência, comunicação pública e participação cidadã. Permite registro de denúncias e acompanhamento em tempo real.",
+        stack: ["React Native", "AWS Lambda", "DynamoDB", "AWS S3"],
+        category: "App Mobile",
       },
       {
         title: "Recicle Aqui",
@@ -263,10 +263,10 @@ export const ptBR: Translations = {
         category: "E-commerce",
       },
       {
-        title: "Meu Prefeito",
-        description: "Aplicativo mobile desenvolvido para prefeituras, com foco em transparência, comunicação pública e participação cidadã. Permite registro de denúncias e acompanhamento em tempo real.",
-        stack: ["React Native", "AWS Lambda", "DynamoDB", "AWS S3"],
-        category: "App Mobile",
+        title: "Pepperlaw UI",
+        description: "Projeto de reestruturação completa do design e da base de código da Pepperlaw. Todo o design foi recriado no Figma e implementado com pixel perfect.",
+        stack: ["React", "Tailwind CSS", "Node.js", ".NET", "Azure"],
+        category: "UI/UX Redesign",
       },
       {
         title: "Farmfy",
