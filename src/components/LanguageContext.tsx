@@ -27,21 +27,29 @@ export const useLanguage = () => useContext(LanguageContext);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState<Locale>(defaultLocale);
+  const [mounted, setMounted] = useState(false);
 
-  // Read from localStorage on mount (SSR-safe)
+  // Only run on client after mount
   useEffect(() => {
-    const stored = localStorage.getItem("locale");
-    if (stored === "en" || stored === "pt-BR") {
-      setLocale(stored);
+    setMounted(true);
+
+    // Read from localStorage only on client
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem("locale");
+      if (stored === "en" || stored === "pt-BR") {
+        setLocale(stored);
+      }
     }
   }, []);
 
   // Persist to localStorage and update document lang/title
   useEffect(() => {
-    localStorage.setItem("locale", locale);
-    document.documentElement.lang = locale;
-    document.title = translations[locale].meta.title;
-  }, [locale]);
+    if (mounted && typeof window !== 'undefined') {
+      localStorage.setItem("locale", locale);
+      document.documentElement.lang = locale;
+      document.title = translations[locale].meta.title;
+    }
+  }, [locale, mounted]);
 
   const t = useMemo(() => translations[locale], [locale]);
 

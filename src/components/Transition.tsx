@@ -33,17 +33,17 @@ const Transition = () => {
   return (
     <>
       <motion.div
-        className='fixed top-0 bottom-0 right-full w-screen h-screen z-30 bg-purple-950'
+        className='fixed top-0 bottom-0 right-full w-screen h-screen z-[100] bg-purple-950'
         initial={{ x: '0%', width: '100%' }}
         animate={controls1}
       />
       <motion.div
-        className='fixed top-0 bottom-0 right-full w-screen h-screen z-20 bg-purple-800'
+        className='fixed top-0 bottom-0 right-full w-screen h-screen z-[90] bg-purple-800'
         initial={{ x: '0%', width: '100%' }}
         animate={controls2}
       />
       <motion.div
-        className='fixed top-0 bottom-0 right-full w-screen h-screen z-10 bg-purple-600'
+        className='fixed top-0 bottom-0 right-full w-screen h-screen z-[80] bg-purple-600'
         initial={{ x: '0%', width: '100%' }}
         animate={controls3}
       />

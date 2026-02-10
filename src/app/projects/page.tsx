@@ -28,7 +28,7 @@ const ProjectCard = ({ project, stackItems }: { project: any; stackItems: Toolti
         {/* Project Title */}
         <h3 className={`${oswald.className} ${
           isTooltipHovered ? 'opacity-20' : 'blur-0 opacity-100'
-        } text-2xl font-bold text-white mb-2`}>
+        } text-xl md:text-2xl font-bold text-white mb-2`}>
           {project.title}
         </h3>
 
@@ -63,27 +63,27 @@ const Projetos = () => {
   const { t } = useLanguage();
 
   return (
-    <div className="text-white">
+    <div className="text-white pb-32 md:pb-20">
       <div className="opacity-0 animate-[fadeIn_0.5s_ease-in-out_1.8s_forwards]">
         <HeroParallaxDemo />
       </div>
 
       {/* Tech Stack Section */}
-      <div className="w-full bg-transparent relative z-10 py-20 pb-40">
-        <div className="max-w-7xl mx-auto px-4">
+      <div className="w-full bg-transparent relative z-10 py-12 md:py-20 pb-20 md:pb-40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
           {/* Section Title */}
-          <div className="mb-16 text-center">
-            <h2 className={`${oswald.className} text-4xl md:text-6xl font-bold text-white mb-4 flex justify-center`}>
+          <div className="mb-12 md:mb-16 text-center">
+            <h2 className={`${oswald.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 flex justify-center`}>
               <PointerHighlight>{t.projects.techHeadingPrefix}<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">{t.projects.techHeadingHighlight}</span></PointerHighlight>
             </h2>
-            <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+            <p className="text-gray-400 text-base md:text-lg lg:text-xl max-w-2xl mx-auto px-4">
               {t.projects.techSubtitle}
             </p>
           </div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {t.projects.cards.map((project, index) => {
               // Preparar dados para AnimatedTooltip
               const stackItems: TooltipItem[] = project.stack.map((tech, idx) => {
@@ -102,7 +102,7 @@ const Projetos = () => {
           </div>
 
           {/* Stats Section */}
-          <div className="mt-20 flex justify-center gap-20">
+          <div className="mt-16 md:mt-20 flex flex-col sm:flex-row justify-center items-center gap-10 sm:gap-12 md:gap-20">
             <div className="text-center">
               <div className={`${oswald.className} text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-2`}>
                 15+

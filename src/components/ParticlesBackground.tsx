@@ -17,7 +17,7 @@ const ParticlesBackground = () => {
   }, [])
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log(container)
+    // Particles loaded successfully
   }
 
   const options: ISourceOptions = useMemo(
@@ -71,18 +71,19 @@ const ParticlesBackground = () => {
     []
   )
 
-  if (init) {
-    return (
-      <Particles
-        id="tsparticles"
-        particlesLoaded={particlesLoaded}
-        options={options}
-        className="fixed inset-0 -z-50"
-      />
-    )
-  }
-
-  return null
+  // Always return the same structure for SSR/CSR consistency
+  return (
+    <>
+      {init && (
+        <Particles
+          id="tsparticles"
+          particlesLoaded={particlesLoaded}
+          options={options}
+          className="fixed inset-0 -z-50"
+        />
+      )}
+    </>
+  )
 }
 
 export default ParticlesBackground

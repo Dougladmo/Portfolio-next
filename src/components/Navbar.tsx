@@ -27,8 +27,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className='fixed z-50 w-full bottom-0 md:left-1/2 md:-translate-x-1/2 md:bottom-10 bg-black/40 backdrop-blur-lg border border-white/10 md:max-w-lg py-2 px-12 md:rounded-full shadow-2xl'>
-        <ul className="flex items-center justify-around gap-10 text-xl text-white">
+    <div className='fixed z-[9999] w-full bottom-0 md:left-1/2 md:-translate-x-1/2 md:bottom-10 bg-black/40 backdrop-blur-lg border border-white/10 md:max-w-lg py-2 px-4 sm:px-8 md:px-12 md:rounded-full shadow-2xl'>
+        <ul className="flex items-center justify-around gap-4 sm:gap-6 md:gap-10 text-lg sm:text-xl text-white">
             {navItems.map((item) => {
               const Icon = item.icon;
               return (
@@ -71,7 +71,7 @@ const Navbar = () => {
                   <button
                     onClick={() => navigateTo(item.route)}
                     onMouseMove={handleMouseMove}
-                    className="w-full h-full px-4 py-3 flex items-center justify-center"
+                    className="w-full h-full px-2 sm:px-4 py-3 flex items-center justify-center"
                   >
                     <Icon className="group-hover:scale-110 transition-transform"/>
                   </button>

@@ -30,19 +30,19 @@ export default function About() {
 
   return (
     <>
-      <main className="w-full flex overflow-hidden relative pt-20 pb-32 md:pt-10 md:pb-20">
-        <div className="max-w-7xl mx-auto px-4 w-full h-full flex flex-col md:flex-row gap-8 md:gap-12 items-start md:items-center relative z-10">
+      <main className="w-full flex overflow-hidden relative pt-8 pb-32 md:pt-10 md:pb-20 min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full h-full flex flex-col md:flex-row gap-8 md:gap-12 items-start md:items-center relative z-10">
 
           {/* Left Content - Bio */}
-          <div className="flex-1 space-y-8 animate-fade-in-up">
-            <h1 className={`text-5xl uppercase md:text-7xl font-bold tracking-tighter text-white drop-shadow-2xl`}>
+          <div className="flex-1 space-y-6 md:space-y-8 animate-fade-in-up w-full">
+            <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-7xl uppercase font-bold tracking-tighter text-white drop-shadow-2xl`}>
               <PointerHighlight>{t.about.headingPrefix}<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">{t.about.headingHighlight}</span></PointerHighlight>
             </h1>
 
             <div className="relative border border-white/10 bg-white/5 rounded-2xl backdrop-blur-md shadow-2xl overflow-hidden">
               <div className="p-6 md:p-8 space-y-4 max-h-[52vh] overflow-y-auto custom-scrollbar">
                 {t.about.bioParagraphs.map((paragraph, index) => (
-                  <p key={index} className="text-gray-300 text-lg leading-relaxed font-light">
+                  <p key={index} className="text-gray-300 text-base md:text-lg leading-relaxed font-light">
                     {paragraph}
                   </p>
                 ))}
@@ -57,14 +57,14 @@ export default function About() {
 
           {/* Right Content - Skills */}
           <div className="flex-1 w-full animate-fade-in-up delay-200">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
               {skills.map((skill, index) => (
                 <CometCard key={index} rotateDepth={15} translateDepth={15}>
-                  <div className="relative p-6 flex flex-col items-center justify-center gap-4 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[140px]">
-                    <div className="text-5xl filter drop-shadow-lg transition-transform duration-300">
+                  <div className="relative p-4 md:p-6 flex flex-col items-center justify-center gap-3 md:gap-4 bg-[#1F2121] border-0 rounded-2xl h-full min-h-[120px] md:min-h-[140px]">
+                    <div className="text-4xl md:text-5xl filter drop-shadow-lg transition-transform duration-300">
                       {skill.icon}
                     </div>
-                    <span className="text-sm font-medium text-gray-300 transition-colors">
+                    <span className="text-xs md:text-sm font-medium text-gray-300 transition-colors text-center">
                       {skill.name}
                     </span>
 
