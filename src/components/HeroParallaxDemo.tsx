@@ -3,17 +3,17 @@ import React from "react";
 import { HeroParallax, Product } from "./ui/hero-parallax";
 import { useLanguage } from "@/components/LanguageContext";
 
-// Thumbnails dos projetos (mantendo os existentes)
+// Thumbnails dos projetos reais (ordem correspondente ao i18n)
 const productThumbnails = [
-  "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
-  "https://aceternity.com/images/products/thumbnails/new/cursor.png",
-  "https://aceternity.com/images/products/thumbnails/new/rogue.png",
-  "https://aceternity.com/images/products/thumbnails/new/editorially.png",
-  "https://aceternity.com/images/products/thumbnails/new/editrix.png",
-  "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
-  "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
-  "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
-  "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
+  "/portfolio/nobuggy-thumb.png",          // 1. NoBuggy
+  "/portfolio/acomportamental-thumb.png",  // 2. AComportamental
+  "/portfolio/befest-thumb.png",           // 3. BeFest
+  "/portfolio/pepperlawUI-thumb.png",      // 4. Pepperlaw UI
+  "/portfolio/recicle-aqui-thumb.png",     // 5. Recicle Aqui
+  "/portfolio/sofempire-thumb.png",        // 6. SofEmpire
+  "/portfolio/solar-energy-thumb.jpeg",    // 7. SolarKit
+  "/portfolio/meu-prefeito-thumb.jpg",     // 8. Meu Prefeito
+  "/portfolio/farmfy-thumb.jpg",           // 9. Farmfy
 ];
 
 export function HeroParallaxDemo() {
