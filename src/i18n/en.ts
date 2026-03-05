@@ -41,7 +41,7 @@ export const en: Translations = {
         skills: ["React", "Markdown", "WOPI", "UI/UX", "Performance"],
       },
       {
-        role: "Mid-Level Full Stack Developer",
+        role: "Full Stack Developer",
         company: "C2A Soluções em Tecnologia",
         period: "Oct 2024 - Mar 2025",
         location: "Belém, Pará, Brazil",
@@ -65,7 +65,7 @@ export const en: Translations = {
         ],
       },
       {
-        role: "Mid-Level Back End Developer",
+        role: "Back End Developer",
         company: "Avatech",
         period: "Apr 2024 - Mar 2025",
         location: "Remote",
