@@ -41,7 +41,7 @@ export const ptBR: Translations = {
         skills: ["React", "Markdown", "WOPI", "UI/UX", "Performance"],
       },
       {
-        role: "Desenvolvedor Full Stack Pleno",
+        role: "Desenvolvedor Full Stack",
         company: "C2A Soluções em Tecnologia",
         period: "Out 2024 - Mar 2025",
         location: "Belém, Pará, Brasil",
@@ -65,7 +65,7 @@ export const ptBR: Translations = {
         ],
       },
       {
-        role: "Desenvolvedor Back End Pleno",
+        role: "Desenvolvedor Back End",
         company: "Avatech",
         period: "Abr 2024 - Mar 2025",
         location: "Remoto",
